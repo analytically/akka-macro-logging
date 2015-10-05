@@ -19,8 +19,9 @@ unmanagedSourceDirectories.in(Compile) := List(scalaSource.in(Compile).value)
 unmanagedSourceDirectories.in(Test)    := List(scalaSource.in(Test).value)
 
 libraryDependencies ++= List(
-  "org.scalacheck" %% "scalacheck" % "1.12.5" % "test",
-  "org.scalatest"  %% "scalatest"  % "2.2.5"  % "test"
+  "com.typesafe.akka" %% "akka-actor"    % "2.4.0",
+  "org.scala-lang"    %  "scala-reflect" % scalaVersion.value,
+  "org.scalatest"     %% "scalatest"     % "2.2.5" % "test"
 )
 
 initialCommands := """|import de.heikoseeberger.akkamacrologging._""".stripMargin
