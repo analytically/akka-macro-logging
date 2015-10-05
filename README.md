@@ -1,5 +1,7 @@
 # akka-macro-logging #
 
+[![Build Status](https://travis-ci.org/hseeberger/akka-macro-logging.svg?branch=master)](https://travis-ci.org/hseeberger/akka-macro-logging)
+
 Akka Macro Logging adds support for lightweight logging using [Scala Macros](http://scalamacros.org). It's a thin
 wrapper around the logging facilities provided by Akka avoiding unnecessary evaluation of log messages or arguments by
 rewriting unchecked invocations of log messages to their checked form:
