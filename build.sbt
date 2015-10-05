@@ -6,6 +6,20 @@ organization := "de.heikoseeberger"
 name         := "akka-macro-logging"
 licenses     += ("Apache-2.0", url("http://www.apache.org/licenses/LICENSE-2.0"))
 
+homepage             := Some(url("https://github.com/hseeberger/akka-macro-logging"))
+pomIncludeRepository := (_ => false)
+pomExtra             := <scm>
+                          <url>https://github.com/hseeberger/akka-macro-logging</url>
+                          <connection>scm:git:git@github.com:hseeberger/akka-macro-logging.git</connection>
+                        </scm>
+                        <developers>
+                          <developer>
+                            <id>hseeberger</id>
+                            <name>Heiko Seeberger</name>
+                            <url>http://heikoseeberger.de</url>
+                          </developer>
+                        </developers>
+
 scalaVersion   := "2.11.7"
 scalacOptions ++= List(
   "-unchecked",

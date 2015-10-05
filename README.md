@@ -1,6 +1,45 @@
 # akka-macro-logging #
 
-Welcome to akka-macro-logging!
+Akka Macro Logging adds support for lightweight logging using [Scala Macros](http://scalamacros.org). It's a thin
+wrapper around the logging facilities provided by Akka avoiding unnecessary evaluation of log messages or arguments by
+rewriting unchecked invocations of log messages to their checked form:
+
+``` scala
+// Simply use `debug` or other log methods without checking whether enabled
+log.debug("Invalid foos {}", foos.mkString(", "))
+
+// The macros rewrite the above to
+if (log.isDebugEnabled) log.debug("Invalid foos {}", foos.mkString(", "))
+```
+
+## Getting Akka SSE
+
+Akka SSE is published to Bintray and Maven Central.
+
+``` scala
+// All releases including intermediate ones are published here,
+// final ones are also published to Maven Central.
+resolvers += Resolver.bintrayRepo("hseeberger", "maven")
+
+libraryDependencies ++= List(
+  "de.heikoseeberger" %% "akka-macro-logging" % "0.1.0",
+  ...
+)
+```
+
+## Usage – basics
+
+The API uses the same names like the Akka Logging API, i.e. `ActorLogging` and `LoggingAdapter`. So all you have to
+change in your code are the imports:
+
+``` scala
+import de.heikoseeberger.akkamacrologging._
+
+class MyActor(foos: Set[Foo]) extends ActorLogging {
+  log.info("Initialized with {}", foos.mkString(", "))
+  ...
+}
+```
 
 ## Contribution policy ##
 
