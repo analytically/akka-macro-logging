@@ -14,9 +14,9 @@ log.debug("Invalid foos {}", foos.mkString(", "))
 if (log.isDebugEnabled) log.debug("Invalid foos {}", foos.mkString(", "))
 ```
 
-## Getting Akka SSE
+## Getting Akka Macro Logging
 
-Akka SSE is published to Bintray and Maven Central.
+Akka Macro Logging is published to Bintray and Maven Central.
 
 ``` scala
 // All releases including intermediate ones are published here,
